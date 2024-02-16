@@ -1,7 +1,7 @@
 [![Tests](https://github.com/sentryco/MockGen/actions/workflows/tests.yml/badge.svg)](https://github.com/sentryco/MockGen/actions/workflows/tests.yml)
 [![codebeat badge](https://codebeat.co/badges/6f474052-1ae2-4c61-b72f-dcd23e442278)](https://codebeat.co/projects/github-com-sentryco-mockgen-main)
 
-# MockGen
+# 🧪 MockGen
 
 `MockGen` is a Swift library that generates mock data for testing and development purposes. It includes methods for generating random data of different types, such as bank names, notes, and full names, as well as methods for generating passwords and secrets. The library pulls data from `.json` and `.csv` files embedded in the SPM package.
 
