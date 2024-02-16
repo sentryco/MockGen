@@ -2,6 +2,7 @@
 
 `MockGen` is a Swift library that generates mock data for testing and development purposes. It includes methods for generating random data of different types, such as bank names, notes, and full names, as well as methods for generating passwords and secrets. The library pulls data from `.json` and `.csv` files embedded in the SPM package.
 
+> [!WARNING]  
 > Use this data for testing, not for production code, there are better ways to generate secrets for production apps
 
 ## Table of Contents
