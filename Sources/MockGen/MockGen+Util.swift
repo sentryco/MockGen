@@ -16,7 +16,7 @@ extension MockGen {
     * - Example: let randomDate = MockGen.randomDate // "06/23/2022"
     * - Returns: A random date string in the short date format (MM/dd/yyyy).
     */
-   internal static var randomDate: String {
+   public static var randomDate: String {
       let msec: Int64 = .init(arc4random_uniform(UInt32(600_000 - 300_000 + 1))) + 300_000 // Generate a random number of milliseconds between 300,000 and 600,000
       let date: Date = .init(milliseconds: msec) // Create a date object from the random number of milliseconds
       return date.shortDate // Return the short date string representation of the date object
@@ -30,7 +30,7 @@ extension MockGen {
     * Example usage:
     * let randomBool = MockGen.getRandomBool(3) // 1/4 chance of returning true
     */
-   internal static func getRandomBool(_ chance: Int) -> Bool {
+   public static func getRandomBool(_ chance: Int) -> Bool {
       (0...chance) // Create a range from 0 to the specified chance value
          .filter ({ (_: Int) in Bool.random() }) // Filter the range to include only values where a random boolean value is true
          .isEmpty // Check if the resulting array is empty (i.e. if any values passed the filter)

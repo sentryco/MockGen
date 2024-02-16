@@ -4,7 +4,7 @@ import Foundation
  * - Remark: There is also: SecCreateSharedWebCredentialPassword() as String?
  * - Note: We can use this in other frameworks if we use `@testable import Account`
  */
-internal enum CodeGen {
+public enum CodeGen {
    /**
     * A utility function for generating a random password string of a given length.
     * The password string can include uppercase letters, lowercase letters, numbers, and special characters.
@@ -18,7 +18,7 @@ internal enum CodeGen {
     * let secret = CodeGen.generatePassword(length: 8, useLowercase: false, useNumbers: false, useSpecialChars: false) //
     * print(secret) // GVHYWQAB
     */
-   internal static func generatePassword(length: Int, useLowercase: Bool = true, useNumbers: Bool = true, useSpecialChars: Bool = true) -> String {
+   public static func generatePassword(length: Int, useLowercase: Bool = true, useNumbers: Bool = true, useSpecialChars: Bool = true) -> String {
       var letters: String = base // Define the base set of characters to use in the password string
       if useLowercase { // Add lowercase letters to the set of characters if requested
          letters += lowerChars

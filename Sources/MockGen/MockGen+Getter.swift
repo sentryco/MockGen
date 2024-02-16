@@ -16,7 +16,7 @@ extension MockGen {
     *   - brand: The brand to use in the email address.
     * - Returns: A mock email address string based on the specified name and brand, or `nil` if the website for the brand is not found.
     */
-    static func getEmail(name: String, brand: String) -> String? {
+   public static func getEmail(name: String, brand: String) -> String? {
       guard let website: String = getWebsite(brand: brand) else { return nil } // Get the website for the specified brand
       return name.lowercased() + "@" + website // Combine the lowercased name and website into an email address
    }
@@ -26,7 +26,7 @@ extension MockGen {
     * - Parameter brand: The brand to use in the website URL.
     * - Returns: A mock website URL string based on the specified brand, or `nil` if the website for the brand is not found.
     */
-    static func getWebsite(brand: String) -> String? {
+   public static func getWebsite(brand: String) -> String? {
       guard let website: String = Websites.website(company: brand) else {
          Swift.print("no website for brand: \(brand)")
          return nil
@@ -37,7 +37,7 @@ extension MockGen {
     * Random first name
     * - Fixme: ⚠️️ add random last name?
     */
-   static var randomFirstName: String? {
+   public static var randomFirstName: String? {
       guard let fullName: String = randomFullName else { Swift.print("no name"); return nil }
       guard let first: String.SubSequence = fullName.split(separator: " ").first else {
          Swift.print("unable to split: >\(fullName)<")
@@ -47,10 +47,10 @@ extension MockGen {
    }
 }
 // deprecated ⚠️️
-extension MockGen {
-   @available(*, deprecated, renamed: "randomFirstName") // You can also point to new class : "UIAlertController.createAlert"
-   static var randomName: String? {
-      randomFirstName
-   }
-}
+//extension MockGen {
+//   @available(*, deprecated, renamed: "randomFirstName") // You can also point to new class : "UIAlertController.createAlert"
+//   static var randomName: String? {
+//      randomFirstName
+//   }
+//}
 #endif

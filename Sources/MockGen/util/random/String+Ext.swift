@@ -18,7 +18,7 @@ extension String {
     * ## Examples:
     * print(String.randomPassword(pwdLength: Int.random(in: 2...48))) // $3K#j9@Lm
     */
-   internal static func randomPassword(pwdLength: Int) -> String {
+   public static func randomPassword(pwdLength: Int) -> String {
       // - Fixme: ⚠️️ Needs refactoring
       let array: [String] = (0..<pwdLength).enumerated().compactMap { (_: (offset: Int, element: Int)) in
          guard let element: String.Element = pwdLetters.randomElement() else { return nil }
@@ -55,7 +55,7 @@ extension String {
     * Example usage:
     * let randomString = String.random(length: 10) // Generates a random string of length 10. aB48xhKk2Yc
     */
-   internal static func random(length: Int) -> String {
+   public static func random(length: Int) -> String {
       let result: [Character] = (0..<length).compactMap { (_: Int) in 
          Statics.characters.randomElement() 
       } // Generate an array of random characters of the specified length

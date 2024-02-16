@@ -12,5 +12,5 @@ import FileSugar // Provides convenience methods for working with files and dire
  * - Consider spinning MockGen out into its own repository or framework. (We can make the account an extension in the account lib etc)
  * - Add support for user names, emails, and notes via JSON files.
  */
-class MockGen {} // Fix: rename testing folder to mockgen
+public class MockGen {} // Fix: rename testing folder to mockgen
 #endif

@@ -9,7 +9,7 @@ extension Date {
     * - Examples:
     *   - Date().mSecSince1970 // 1476889390939
     */
-   public var mSecSince1970: Int64 {
+   internal var mSecSince1970: Int64 {
       Int64((self.timeIntervalSince1970 * 1000.0).rounded())
    }
    /**
@@ -18,7 +18,7 @@ extension Date {
     * - Examples:
     *   - Date().mSecSinceReferenceDate // 631139040000
     */
-   public var mSecSinceReferenceDate: Int64 {
+   internal var mSecSinceReferenceDate: Int64 {
       Int64((self.timeIntervalSinceReferenceDate * 1000.0).rounded())
    }
    /**
@@ -30,7 +30,7 @@ extension Date {
     *   - date: The date in milliseconds since 1970
     * - Returns: The short date string
     */
-   public static func shortModifiedDate(date: Double) -> String {
+   internal static func shortModifiedDate(date: Double) -> String {
       Date(timeIntervalSince1970: TimeInterval(date) / 1000).shortDate
    }
    /**
@@ -42,7 +42,7 @@ extension Date {
     *   - date: The date in milliseconds since 1970
     * - Returns: The short date and time string
     */
-   public static func shortModifiedDateAndTime(date: Double) -> String {
+   internal static func shortModifiedDateAndTime(date: Double) -> String {
       Date(timeIntervalSince1970: TimeInterval(date) / 1000).shortDateWithTime
    }
 }

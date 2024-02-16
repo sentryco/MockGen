@@ -7,7 +7,7 @@ import FileSugar
  * This class provides functions for generating random secret strings.
  * - Note: We can use this in other frameworks if we use `@testable import Account`
  */
-internal class SecRan {
+public class SecRan {
    /**
     * Generates a random secret string of length between `min` and `max` characters
     * - Parameters:
@@ -17,7 +17,7 @@ internal class SecRan {
     * Example usage:
     * let secret = SecRan.randomSecret() // Generates a random secret string between 8 and 44 characters in length.
     */
-   internal static func randomSecret(min: Int = 8, max: Int = 44) -> String? {
+   public static func randomSecret(min: Int = 8, max: Int = 44) -> String? {
       guard max <= 44 else { Swift.print("Error: max length must be less than or equal to 44"); return nil } // Check if max length is less than or equal to 44
       guard let length: Int = (min..<max).randomElement() else { return nil } // Generate a random length between min and max
       return randomSecret(length: length) // Return a random secret string of the generated length
@@ -33,7 +33,7 @@ internal class SecRan {
     * - Returns: A random secret string of the specified length, or nil if `length` is greater than 44.
     * - Remark: The function generates a random 256-bit symmetric key and uses it as a salt to generate a base64-encoded string. The function then limits the string to the desired length.
     */
-   internal static func randomSecret(length: Int) -> String? {
+   public static func randomSecret(length: Int) -> String? {
       guard length <= 44 else { Swift.print("Error: length must be less than or equal to 44"); return nil } // Check if length is less than or equal to 44
       let symKeySalt: SymmetricKey = .init(size: .bits256) // Generate a random 256-bit symmetric key
       let salt: Data = symKeySalt.withUnsafeBytes { Data($0) } // Convert the symmetric key to a Data object
