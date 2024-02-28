@@ -18,7 +18,7 @@ extension MockGen {
    /**
     * Random full name
     *
-    * - Fixme: ⚠️️ Create firstNames, lastNames, fullNames?
+    * - Fixme: ⚠️️ Create firstNames, lastNames, fullNames? this is now in use MockGen.randomFirstName etc
     */
    public static var randomFullName: String? { Names.line }
 }
