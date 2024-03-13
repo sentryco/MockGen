@@ -64,7 +64,10 @@ extension MockGen {
     * - Fixme: ⚠️️ Maybe use TWOFA lib to gen the secret? we cant access seclib here so no, using SecRan.randomSecret should work better
     */
    public static var randomOTP: String? { // internal static let otps: [String] = ["otpauth://totp/test?secret=GEZDGNBV", "otpauth://hotp/test?secret=GEZDGNBV&algorithm=SHA512&digits=6&counter=1", "otpauth://totp/ACME%20Co:john.doe@email.com?secret=GEZDGNBV&algorithm=SHA512&digits=6&period=30.0&issuer=ACME%20Co&image=https://www.images.com/image.png"]
-      let secret: String = SecRan.randomSecret(min:8, max: 16) ?? "GEZDGNBV" // CodeGen.generatePassword(length: 8, useLowercase: false, useNumbers: false, useSpecialChars: false) //
+//      let secret: String = SecRan.randomSecret(min:8, max: 16) ?? "GEZDGNBV" //
+      let secret: String = CodeGen.generatePassword(length: 8, useLowercase: false, useNumbers: false, useSpecialChars: false) //
+//      let urlString: String = "otpauth://totp/test?secret=\(secret)"
+//      let urlString: String = "otpauth://hotp/test?secret=\(secret)&algorithm=SHA512&digits=6&counter=1"
       let urlString: String = "otpauth://totp/ACME%20Co:john.doe@email.com?secret=\(secret)&algorithm=SHA512&digits=6&period=30.0&issuer=ACME%20Co&image=https://www.images.com/image.png"
       return urlString
       // "otpauth://totp/test?secret=\(secret)" // GEZDGNBV
