@@ -71,6 +71,7 @@ Lower level calls:
 ```swift
 let randomFullName = MockGen.randomFullName // Returns a random full name.
 let randomEmail = MockGen.getEmail(name: "John Doe", brand: "Acme Corp") // Returns a random email address with the specified name and brand.
+let randomEmail2 = MockGen.randomEmail // Returns a random email address with a random name and random brand.
 let randomWebsite = MockGen.getWebsite(brand: "Acme Corp") // Returns a random website URL with the specified brand.
 let randomDate = MockGen.randomDate // Returns a random date string.
 let randomInt = MockGen.randomInt(min: 1, max: 100) // Returns a random integer between the specified minimum and maximum values.

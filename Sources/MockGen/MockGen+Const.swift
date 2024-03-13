@@ -51,6 +51,14 @@ extension MockGen {
     */
    public static var randomBrand: String? { Brands.brands.randomElement() }
    /**
+    * Random email
+    */
+   public static var randomEmail: String? {
+      guard let name: String = randomFirstName,
+            let brand: String = randomBrand else { return nil }
+      return getEmail(name: name, brand: brand)
+   }
+   /**
     * - Remark: Secret has a format behind it.  Uppercase random string seems to work
     * - Fixme: ⚠️️⚠️️ We should also add other random elements to the OTP url later 👈
     * - Fixme: ⚠️️ Maybe use TWOFA lib to gen the secret? we cant access seclib here so no
