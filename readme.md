@@ -106,3 +106,6 @@ If you find a bug or have a feature request, please open an issue or submit a pu
 ## License
 
 `MockGen` is released under the MIT license. See [LICENSE](LICENSE) for more information.
+
+## Todo: 
+- Add usage gif

@@ -24,7 +24,8 @@ public class SecRan {
    }
    /**
     * Generates a random secret string of the specified length.
-    * - Fixme: ⚠️️ make it throw? and add max as an option?
+    * - Fixme: ⚠️️ Make it throw? and add max as an option?
+    * - Fixme: ⚠️️ Doc each line, use copilot
     * ## Examples:
     * - `randomSecret(length: 8)` returns "UGT7+4P2"
     * - `randomSecret(length: 9)` returns "UZYVJ1OS2"

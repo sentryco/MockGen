@@ -6,22 +6,22 @@ import Logger
  */
 class CSVUtil {
    /**
-    * Returns an array of strings representing the lines in the specified CSV file.
-    * - Parameters:
-    *   - fileName: The name of the CSV file to read.
-    *   - seperator: The separator used in the CSV file. Default is ",\n".
-    * - Returns: An array of strings representing the lines in the specified CSV file.
+    * Returns an array of strings representing the lines in the specified CSV file
     * - Remark: The function reads the contents of the CSV file and splits it into an array of strings using the specified separator.
+    * - Parameters:
+    *   - fileName: The name of the CSV file to read
+    *   - seperator: The separator used in the CSV file. Default is ",\n"
+    * - Returns: An array of strings representing the lines in the specified CSV file
     */
    static func list(fileName: String, seperator: String = ",\n") -> [String] {
       content(fileName: fileName)?.components(separatedBy: seperator) ?? []
    }
    /**
-    * Returns the contents of the specified CSV file as a string.
+    * Returns the contents of the specified CSV file as a string
+    * - Remark: The function reads the contents of the CSV file and returns it as a string
     * - Parameters:
     *   - fileName: The name of the CSV file to read.
-    * - Returns: The contents of the specified CSV file as a string.
-    * - Remark: The function reads the contents of the CSV file and returns it as a string.
+    * - Returns: The contents of the specified CSV file as a string
     */
    static func content(fileName: String) -> String? {
       guard let resourcePath: String = Foundation.Bundle.module.resourcePath else {

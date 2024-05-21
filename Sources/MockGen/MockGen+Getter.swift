@@ -2,15 +2,12 @@
 import Foundation
 /**
  * Email and website mock generators
- *
- * These methods generate mock email addresses and website URLs based on the specified name and brand. The `getEmail` method combines the lowercased name and website into an email address, while the `getWebsite` method returns the website for the specified brand. The `websites` dictionary contains a list of common brand names and their associated websites.
- *
+ * - Note: These methods generate mock email addresses and website URLs based on the specified name and brand. The `getEmail` method combines the lowercased name and website into an email address, while the `getWebsite` method returns the website for the specified brand. The `websites` dictionary contains a list of common brand names and their associated websites.
  * - Note: These methods are marked as `internal` to ensure they can only be accessed within the same module.
  */
 extension MockGen {
    /**
     * Email mock generator
-    *
     * - Parameters:
     *   - name: The name to use in the email address.
     *   - brand: The brand to use in the email address.
@@ -22,7 +19,6 @@ extension MockGen {
    }
    /**
     * Website mock generator
-    *
     * - Parameter brand: The brand to use in the website URL.
     * - Returns: A mock website URL string based on the specified brand, or `nil` if the website for the brand is not found.
     */
@@ -35,7 +31,7 @@ extension MockGen {
    }
    /**
     * Random first name
-    * - Fixme: ⚠️️ add random last name?
+    * - Fixme: ⚠️️ Add random last name?
     */
    public static var randomFirstName: String? {
       guard let fullName: String = randomFullName else { Swift.print("no name"); return nil }

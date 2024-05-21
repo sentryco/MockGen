@@ -10,11 +10,12 @@ extension String {
     */
    fileprivate static let pwdLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&()0123456789"
    /**
-    * Generates a random password string of the specified length.
+    * Generates a random password string of the specified length
+    * - Remark: The function generates a password string by randomly selecting characters from a set of letters that includes lowercase letters, uppercase letters, numbers, and special characters.
+    * - Fixme: ⚠️️ doc each line, use copilot
     * - Parameters:
     *   - pwdLength: The length of the password string. Must be between 2 and 48.
-    * - Returns: A random password string of the specified length.
-    * - Remark: The function generates a password string by randomly selecting characters from a set of letters that includes lowercase letters, uppercase letters, numbers, and special characters.
+    * - Returns: A random password string of the specified length
     * ## Examples:
     * print(String.randomPassword(pwdLength: Int.random(in: 2...48))) // $3K#j9@Lm
     */
@@ -32,7 +33,7 @@ extension String {
    fileprivate enum Statics {
       /**
        * A range of Unicode scalar values that includes lowercase letters, uppercase letters, and numbers.
-       * - Description:  Define a range of Unicode scalar values that includes lowercase letters, uppercase letters, and numbers
+       * - Description: Define a range of Unicode scalar values that includes lowercase letters, uppercase letters, and numbers
        * - Remark: The range is used to generate a set of characters that can be used to create a random string.
        */
       static let scalars: FlattenSequence<[ClosedRange<UInt32>]> = [
@@ -48,10 +49,8 @@ extension String {
    /**
     * Generates a random string of the specified length.
     * - Description: The function generates a random string by selecting characters from an array that includes lowercase letters, uppercase letters, and numbers.
-    *
     * - Parameter length: The length of the random string.
     * - Returns: A random string of the specified length.
-    *
     * Example usage:
     * let randomString = String.random(length: 10) // Generates a random string of length 10. aB48xhKk2Yc
     */

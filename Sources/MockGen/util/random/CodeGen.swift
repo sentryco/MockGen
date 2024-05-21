@@ -7,11 +7,12 @@ import Foundation
 public enum CodeGen {
    /**
     * A utility function for generating a random password string of a given length.
-    * The password string can include uppercase letters, lowercase letters, numbers, and special characters.
-    * - Parameter length: The length of the password string to generate.
-    * - Parameter useLowercase: Whether to include lowercase letters in the password string. Default is `true`.
-    * - Parameter useNumbers: Whether to include numbers in the password string. Default is `true`.
-    * - Parameter useSpecialChars: Whether to include special characters in the password string. Default is `true`.
+    * - Note: The password string can include uppercase letters, lowercase letters, numbers, and special characters.
+    * - Parameters:
+    *   - length: The length of the password string to generate.
+    *   - useLowercase: Whether to include lowercase letters in the password string. Default is `true`.
+    *   - useNumbers: Whether to include numbers in the password string. Default is `true`.
+    *   - useSpecialChars: Whether to include special characters in the password string. Default is `true`.
     * - Returns: A random password string of the given length.
     * ## Examples:
     * CodeGen.generatePassword(length: Int.random(in: 2...48)) // $3K#j9@Lm
@@ -41,7 +42,7 @@ public enum CodeGen {
  * Const
  */
 extension CodeGen {
-   // fix we can also use Alphabet class. maybe copy it here? yepp! 
+   // - Fixme: ⚠️️ we can also use Alphabet class. maybe copy it here? yepp!
    private static let base: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" // Define the base set of characters to use in the password string
    private static let lowerChars: String = "abcdefghijklmnopqrstuvwxyz" // Define lowercase letters to use in the password string
    private static let numberChars: String = "1234567890" // Define numbers to use in the password string

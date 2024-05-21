@@ -7,10 +7,9 @@ import FileSugar // Provides convenience methods for working with files and dire
  * MockGen
  * This class is used for generating mock data for unit tests. It includes methods for generating random passwords, as well as adding user names, emails, and notes via JSON files. It's currently only used for debugging purposes, but could potentially be spun out into its own repository or framework and launched on a platform like Product Hunt.
  * - Note: We can use this in other frameworks if we use `@testable import Account`
- * - Fixme:
- * - Add the random password methods from `UITests`. (or move them?)
- * - Consider spinning MockGen out into its own repository or framework. (We can make the account an extension in the account lib etc)
- * - Add support for user names, emails, and notes via JSON files.
+ * - Fixme: ⚠️️ Add the random password methods from `UITests`. (or move them?)
+ * - Fixme: ⚠️️ Consider spinning MockGen out into its own repository or framework. (We can make the account an extension in the account lib etc)
+ * - Fixme: ⚠️️ Add support for user names, emails, and notes via JSON files.
  */
 public class MockGen {} // Fix: rename testing folder to mockgen
 #endif

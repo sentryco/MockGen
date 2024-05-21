@@ -34,19 +34,26 @@ final class MockGenTests: XCTestCase {
  * Getters
  */
 extension MockGenTests {
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testGetEmail() {
       let email = MockGen.getEmail(name: "John", brand: "Apple")
       XCTAssertNotNil(email, "getEmail returned nil.")
       XCTAssertTrue(email?.contains("@") ?? false, "getEmail did not return a valid email.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testGetWebsite() {
-      let website = MockGen.getWebsite(brand: "Apple")
+      let website: String? = MockGen.getWebsite(brand: "Apple")
       XCTAssertNotNil(website, "getWebsite returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomFirstName() {
-      let firstName = MockGen.randomFirstName
+      let firstName: String? = MockGen.randomFirstName
       XCTAssertNotNil(firstName, "randomFirstName returned nil.")
    }
    
@@ -59,14 +66,19 @@ extension MockGenTests {
  * util tests
  */
 extension MockGenTests {
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomDate() {
-      let date = MockGen.randomDate
+      let date: String = MockGen.randomDate
       XCTAssertNotNil(date, "randomDate returned nil.")
       // Add more assertions here to validate the format and range of the date
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testGetRandomBool() {
-      let bool = MockGen.getRandomBool(3)
+      let bool: Bool = MockGen.getRandomBool(3)
       // This assertion is a bit tricky because the result is random
       // But you can run it multiple times to statistically verify that it's working correctly
       XCTAssertTrue(bool == true || bool == false, "getRandomBool did not return a boolean.")
@@ -76,84 +88,117 @@ extension MockGenTests {
  * variable test
  */
 extension MockGenTests {
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomBank() {
-      let bank = MockGen.randomBank
+      let bank: String? = MockGen.randomBank
       XCTAssertNotNil(bank, "randomBank returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomNote() {
-      let note = MockGen.randomNote
+      let note: String? = MockGen.randomNote
       XCTAssertNotNil(note, "randomNote returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomFullName() {
-      let fullName = MockGen.randomFullName
+      let fullName: String? = MockGen.randomFullName
       XCTAssertNotNil(fullName, "randomFullName returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomSSID() {
-      let ssid = MockGen.randomSSID
+      let ssid: String? = MockGen.randomSSID
       XCTAssertNotNil(ssid, "randomSSID returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomIssuer() {
-      let issuer = MockGen.randomIssuer
+      let issuer: String? = MockGen.randomIssuer
       XCTAssertNotNil(issuer, "randomIssuer returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomBrand() {
-      let brand = MockGen.randomBrand
+      let brand: String? = MockGen.randomBrand
       XCTAssertNotNil(brand, "randomBrand returned nil.")
    }
-   
+   /**
+    * - Fixme: ⚠️️ add description
+    */
    fileprivate static func testRandomOTP() {
-      let otp = MockGen.randomOTP
+      let otp: String? = MockGen.randomOTP
       XCTAssertNotNil(otp, "randomOTP returned nil.")
       XCTAssertTrue(otp?.contains("otpauth://") ?? false, "randomOTP did not return a valid OTP.")
    }
-   
 }
-
+/**
+ * - Fixme: ⚠️️ add description
+ */
 extension MockGenTests {
+   /**
+    * - Fixme: ⚠️️ add description
+    */
     fileprivate static func testGeneratePassword() {
-        let password = CodeGen.generatePassword(length: 10)
+        let password: String = CodeGen.generatePassword(length: 10)
         XCTAssertNotNil(password, "generatePassword returned nil.")
         XCTAssertEqual(password.count, 10, "Password length is not correct.")
         
-        let passwordWithoutLowercase = CodeGen.generatePassword(length: 10, useLowercase: false)
+        let passwordWithoutLowercase: String = CodeGen.generatePassword(length: 10, useLowercase: false)
         XCTAssertFalse(passwordWithoutLowercase.range(of: "[a-z]", options: .regularExpression) != nil, "Password contains lowercase letters.")
         
-        let passwordWithoutNumbers = CodeGen.generatePassword(length: 10, useNumbers: false)
+        let passwordWithoutNumbers: String = CodeGen.generatePassword(length: 10, useNumbers: false)
         XCTAssertFalse(passwordWithoutNumbers.range(of: "[0-9]", options: .regularExpression) != nil, "Password contains numbers.")
         
-        let passwordWithoutSpecialChars = CodeGen.generatePassword(length: 10, useSpecialChars: false)
+        let passwordWithoutSpecialChars: String = CodeGen.generatePassword(length: 10, useSpecialChars: false)
         XCTAssertFalse(passwordWithoutSpecialChars.range(of: "[!@#$%^&*]", options: .regularExpression) != nil, "Password contains special characters.")
     }
 }
-
+/**
+ * - Fixme: ⚠️️ add description
+ */
 extension MockGenTests {
-    
+   /**
+    * - Fixme: ⚠️️ add description
+    */
     fileprivate static func testRandomSecretWithMinMax() {
-        let secret = SecRan.randomSecret(min: 10, max: 20)
+        let secret: String? = SecRan.randomSecret(min: 10, max: 20)
         XCTAssertNotNil(secret, "randomSecret(min:max:) returned nil.")
         XCTAssertTrue((10...20).contains(secret?.count ?? 0), "Secret length is not within the specified range.")
       
     }
-
+   /**
+    * - Fixme: ⚠️️ add description
+    */
     fileprivate static func testRandomSecretWithLength() {
-        let secret = SecRan.randomSecret(length: 10)
+       let secret: String? = SecRan.randomSecret(length: 10)
         XCTAssertNotNil(secret, "randomSecret(length:) returned nil.")
         XCTAssertEqual(secret?.count, 10, "Secret length is not correct.")
     }
 }
-
+/**
+ * - Fixme: ⚠️️ add description
+ */
 extension MockGenTests {
+   /**
+    * - Fixme: ⚠️️ add description
+    */
     fileprivate static func testRandomPassword() {
-        let password = String.randomPassword(pwdLength: 10)
+        let password: String = String.randomPassword(pwdLength: 10)
         XCTAssertEqual(password.count, 10, "Password length is not correct.")
     }
+   /**
+    * - Fixme: ⚠️️ add description
+    */
     fileprivate static func testRandom() {
-        let randomString = String.random(length: 10)
+        let randomString: String = String.random(length: 10)
         XCTAssertEqual(randomString.count, 10, "Random string length is not correct.")
     }
 }

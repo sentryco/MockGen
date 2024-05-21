@@ -7,7 +7,7 @@ import FileSugar
  * Data
  */
 extension MockGen {
-    /**
+   /**
     * Random bank name
     */
    public static var randomBank: String? { Banks.line }
@@ -17,7 +17,6 @@ extension MockGen {
    public static var randomNote: String? { Notes.line }
    /**
     * Random full name
-    *
     * - Fixme: ⚠️️ Create firstNames, lastNames, fullNames? this is now in use MockGen.randomFirstName etc
     */
    public static var randomFullName: String? { Names.line }
@@ -28,25 +27,19 @@ extension MockGen {
 extension MockGen {
    /**
     * Random SSID generator
-    *
-    * This method generates a random SSID from the `SSIDS` array, which contains a list of common wifi network names. If the array is empty, the method returns `nil`.
-    *
+    * - Note: This method generates a random SSID from the `SSIDS` array, which contains a list of common wifi network names. If the array is empty, the method returns `nil`.
     * - Returns: A random SSID string from the `SSIDS` array, or `nil` if the array is empty.
     */
    public static var randomSSID: String? { SSIDS.line }
    /**
     * Random credit card issuer generator
-    *
-    * This method generates a random credit card issuer name from the `CreditCardIssuers` array, which contains a list of common credit card issuers. If the array is empty, the method returns `nil`.
-    *
+    * - Note: This method generates a random credit card issuer name from the `CreditCardIssuers` array, which contains a list of common credit card issuers. If the array is empty, the method returns `nil`.
     * - Returns: A random credit card issuer name string from the `CreditCardIssuers` array, or `nil` if the array is empty.
     */
    public static var randomIssuer: String? { CreditCardIssuers.line }
    /**
     * Random brand name generator
-    *
-    * This method generates a random brand name from the `Brands` array, which contains a list of common brand names. If the array is empty, the method returns `nil`.
-    *
+    * - Note: This method generates a random brand name from the `Brands` array, which contains a list of common brand names. If the array is empty, the method returns `nil`.
     * - Returns: A random brand name string from the `Brands` array, or `nil` if the array is empty.
     */
    public static var randomBrand: String? { Brands.brands.randomElement() }
@@ -64,10 +57,15 @@ extension MockGen {
     * - Fixme: ⚠️️ Maybe use TWOFA lib to gen the secret? we cant access seclib here so no, using SecRan.randomSecret should work better
     */
    public static var randomOTP: String? { // internal static let otps: [String] = ["otpauth://totp/test?secret=GEZDGNBV", "otpauth://hotp/test?secret=GEZDGNBV&algorithm=SHA512&digits=6&counter=1", "otpauth://totp/ACME%20Co:john.doe@email.com?secret=GEZDGNBV&algorithm=SHA512&digits=6&period=30.0&issuer=ACME%20Co&image=https://www.images.com/image.png"]
-//      let secret: String = SecRan.randomSecret(min:8, max: 16) ?? "GEZDGNBV" //
-      let secret: String = CodeGen.generatePassword(length: 8, useLowercase: false, useNumbers: false, useSpecialChars: false) //
-//      let urlString: String = "otpauth://totp/test?secret=\(secret)"
-//      let urlString: String = "otpauth://hotp/test?secret=\(secret)&algorithm=SHA512&digits=6&counter=1"
+      // let secret: String = SecRan.randomSecret(min:8, max: 16) ?? "GEZDGNBV" //
+      let secret: String = CodeGen.generatePassword(
+         length: 8,
+         useLowercase: false,
+         useNumbers: false,
+         useSpecialChars: false
+      )
+      // let urlString: String = "otpauth://totp/test?secret=\(secret)"
+      // let urlString: String = "otpauth://hotp/test?secret=\(secret)&algorithm=SHA512&digits=6&counter=1"
       let urlString: String = "otpauth://totp/ACME%20Co:john.doe@email.com?secret=\(secret)&algorithm=SHA512&digits=6&period=30.0&issuer=ACME%20Co&image=https://www.images.com/image.png"
       return urlString
       // "otpauth://totp/test?secret=\(secret)" // GEZDGNBV
