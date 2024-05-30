@@ -13,12 +13,12 @@ public class SecRan {
     * - Parameters:
     *   - min: The minimum length of the secret string. Default is 8.
     *   - max: The maximum length of the secret string. Default is 44.
-    * - Returns: A random secret string of length between `min` and `max` characters, or nil if `max` is greater than 44.
+    * - Returns: A random secret string of length between `min` and `max` characters, or nil if `min` is greater than `max`.
     * Example usage:
-    * let secret = SecRan.randomSecret() // Generates a random secret string between 8 and 44 characters in length.
+    * let secret = SecRan.randomSecret() // Generates a random secret string between min and max characters in length.
     */
    public static func randomSecret(min: Int = 8, max: Int = 44) -> String? {
-      guard max <= 44 else { Swift.print("Error: max length must be less than or equal to 44"); return nil } // Check if max length is less than or equal to 44
+      guard min < max else { Swift.print("Error: min \(min) length must be less than or max \(max)"); return nil } // Check if max length is less than or equal to 44
       guard let length: Int = (min..<max).randomElement() else { return nil } // Generate a random length between min and max
       return randomSecret(length: length) // Return a random secret string of the generated length
    }
@@ -30,12 +30,12 @@ public class SecRan {
     * - `randomSecret(length: 8)` returns "UGT7+4P2"
     * - `randomSecret(length: 9)` returns "UZYVJ1OS2"
     * - Parameters:
-    *   - length: The length of the secret string. Must be less than or equal to 44.
+    *   - length: The length of the secret string.
     * - Returns: A random secret string of the specified length, or nil if `length` is greater than 44.
     * - Remark: The function generates a random 256-bit symmetric key and uses it as a salt to generate a base64-encoded string. The function then limits the string to the desired length.
     */
    public static func randomSecret(length: Int) -> String? {
-      guard length <= 44 else { Swift.print("Error: length must be less than or equal to 44"); return nil } // Check if length is less than or equal to 44
+//      guard length <= 44 else { Swift.print("Error: length must be less than or equal to 44"); return nil } // Check if length is less than or equal to 44
       let symKeySalt: SymmetricKey = .init(size: .bits256) // Generate a random 256-bit symmetric key
       let salt: Data = symKeySalt.withUnsafeBytes { Data($0) } // Convert the symmetric key to a Data object
       let secret: String = salt.base64EncodedString() // Generate a base64-encoded string from the Data object
