@@ -26,6 +26,7 @@ public class SecRan {
     * Generates a random secret string of the specified length.
     * - Fixme: ⚠️️ Make it throw? and add max as an option?
     * - Fixme: ⚠️️ Doc each line, use copilot
+    * - Fixme: ⚠️️ figure out a more precise way than multiplying with 8, this is just for testing, so not critical
     * ## Examples:
     * - `randomSecret(length: 8)` returns "UGT7+4P2"
     * - `randomSecret(length: 9)` returns "UZYVJ1OS2"
@@ -36,7 +37,7 @@ public class SecRan {
     */
    public static func randomSecret(length: Int) -> String? {
 //      guard length <= 44 else { Swift.print("Error: length must be less than or equal to 44"); return nil } // Check if length is less than or equal to 44
-      let symKeySalt: SymmetricKey = .init(size: .bits256) // Generate a random 256-bit symmetric key
+      let symKeySalt: SymmetricKey = .init(size: .init(bitCount: length * 8)) // Generate a random 256-bit symmetric key
       let salt: Data = symKeySalt.withUnsafeBytes { Data($0) } // Convert the symmetric key to a Data object
       let secret: String = salt.base64EncodedString() // Generate a base64-encoded string from the Data object
       let range: String = { // Limit the secret to the desired length

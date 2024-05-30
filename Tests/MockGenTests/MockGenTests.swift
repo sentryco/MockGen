@@ -78,7 +78,7 @@ extension MockGenTests {
     * - Fixme: ⚠️️ add description
     */
    fileprivate static func testGetRandomBool() {
-      let bool: Bool = MockGen.getRandomBool(3)
+      let bool: Bool = MockGen.getRandomBool(3) // chance factor
       // This assertion is a bit tricky because the result is random
       // But you can run it multiple times to statistically verify that it's working correctly
       XCTAssertTrue(bool == true || bool == false, "getRandomBool did not return a boolean.")
@@ -147,17 +147,17 @@ extension MockGenTests {
     * - Fixme: ⚠️️ add description
     */
     fileprivate static func testGeneratePassword() {
-        let password: String = CodeGen.generatePassword(length: 10)
+        let password: String = CodeGen.generatePassword(length: 92)
         XCTAssertNotNil(password, "generatePassword returned nil.")
-        XCTAssertEqual(password.count, 10, "Password length is not correct.")
+        XCTAssertEqual(password.count, 92, "Password length is not correct.")
         
-        let passwordWithoutLowercase: String = CodeGen.generatePassword(length: 10, useLowercase: false)
+        let passwordWithoutLowercase: String = CodeGen.generatePassword(length: 44, useLowercase: false)
         XCTAssertFalse(passwordWithoutLowercase.range(of: "[a-z]", options: .regularExpression) != nil, "Password contains lowercase letters.")
         
-        let passwordWithoutNumbers: String = CodeGen.generatePassword(length: 10, useNumbers: false)
+        let passwordWithoutNumbers: String = CodeGen.generatePassword(length: 32, useNumbers: false)
         XCTAssertFalse(passwordWithoutNumbers.range(of: "[0-9]", options: .regularExpression) != nil, "Password contains numbers.")
         
-        let passwordWithoutSpecialChars: String = CodeGen.generatePassword(length: 10, useSpecialChars: false)
+        let passwordWithoutSpecialChars: String = CodeGen.generatePassword(length: 8, useSpecialChars: false)
         XCTAssertFalse(passwordWithoutSpecialChars.range(of: "[!@#$%^&*]", options: .regularExpression) != nil, "Password contains special characters.")
     }
 }
@@ -168,19 +168,20 @@ extension MockGenTests {
    /**
     * - Fixme: ⚠️️ add description
     */
-    fileprivate static func testRandomSecretWithMinMax() {
-        let secret: String? = SecRan.randomSecret(min: 10, max: 20)
-        XCTAssertNotNil(secret, "randomSecret(min:max:) returned nil.")
-        XCTAssertTrue((10...20).contains(secret?.count ?? 0), "Secret length is not within the specified range.")
-      
-    }
+   fileprivate static func testRandomSecretWithMinMax() {
+      let minMax = (min: 32, max: 64)
+      let secret: String? = SecRan.randomSecret(min: minMax.min, max: minMax.max)
+      XCTAssertNotNil(secret, "randomSecret(min:max:) returned nil.")
+      XCTAssertTrue((minMax.min...minMax.max).contains(secret?.count ?? 0), "Secret length is not within the specified range.")
+   }
    /**
     * - Fixme: ⚠️️ add description
     */
     fileprivate static func testRandomSecretWithLength() {
-       let secret: String? = SecRan.randomSecret(length: 10)
+       let len = 128
+       let secret: String? = SecRan.randomSecret(length: len)
         XCTAssertNotNil(secret, "randomSecret(length:) returned nil.")
-        XCTAssertEqual(secret?.count, 10, "Secret length is not correct.")
+        XCTAssertEqual(secret?.count, len, "Secret length is not correct.")
     }
 }
 /**
@@ -191,14 +192,14 @@ extension MockGenTests {
     * - Fixme: ⚠️️ add description
     */
     fileprivate static func testRandomPassword() {
-        let password: String = String.randomPassword(pwdLength: 10)
-        XCTAssertEqual(password.count, 10, "Password length is not correct.")
+        let password: String = String.randomPassword(pwdLength: 64)
+        XCTAssertEqual(password.count, 64, "Password length is not correct.")
     }
    /**
     * - Fixme: ⚠️️ add description
     */
     fileprivate static func testRandom() {
-        let randomString: String = String.random(length: 10)
-        XCTAssertEqual(randomString.count, 10, "Random string length is not correct.")
+        let randomString: String = String.random(length: 88)
+        XCTAssertEqual(randomString.count, 88, "Random string length is not correct.")
     }
 }
