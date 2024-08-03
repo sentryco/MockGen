@@ -1,8 +1,12 @@
 #if DEBUG
 import Foundation
-
 /**
  * A class that provides access to a list of names from a CSV file in the debug build.
+ * - Description: This class provides access to a list of names stored in a CSV file.
+ *   It is designed to be used for generating mock data or testing scenarios that require
+ *   realistic person names, genders, ages, and occupations. The class conforms to the
+ *   CSVKind protocol, which defines the structure for accessing CSV-based data.
+ * - Note: This class is only available in DEBUG builds to ensure it's not included in production code.
  */
 class Names: CSVKind {
    /**

@@ -2,12 +2,14 @@
 import Foundation
 /**
  * Email and website mock generators
+ * - Description: This section contains methods for generating mock email addresses and website URLs, which are essential for testing email and web-related functionalities in applications.
  * - Note: These methods generate mock email addresses and website URLs based on the specified name and brand. The `getEmail` method combines the lowercased name and website into an email address, while the `getWebsite` method returns the website for the specified brand. The `websites` dictionary contains a list of common brand names and their associated websites.
  * - Note: These methods are marked as `internal` to ensure they can only be accessed within the same module.
  */
 extension MockGen {
    /**
     * Email mock generator
+    * - Description: Generates a mock email address by concatenating the provided name and brand with the domain obtained from the `getWebsite` method. The name is converted to lowercase to simulate a typical email format.
     * - Parameters:
     *   - name: The name to use in the email address.
     *   - brand: The brand to use in the email address.
@@ -19,6 +21,7 @@ extension MockGen {
    }
    /**
     * Website mock generator
+    * - Description: This method generates a mock website URL for a given brand. It looks up the brand in the `Websites` dictionary to find the associated website. If the brand is not present in the dictionary, it logs an error and returns `nil`.
     * - Parameter brand: The brand to use in the website URL.
     * - Returns: A mock website URL string based on the specified brand, or `nil` if the website for the brand is not found.
     */
@@ -31,6 +34,7 @@ extension MockGen {
    }
    /**
     * Random first name
+    * - Description: This method generates a random first name by extracting the first part of a random full name. If no full name is available or the name cannot be split, it logs an error and returns `nil`.
     * - Fixme: ⚠️️ Add random last name?
     */
    public static var randomFirstName: String? {
@@ -42,11 +46,4 @@ extension MockGen {
       return String(first)
    }
 }
-// deprecated ⚠️️
-//extension MockGen {
-//   @available(*, deprecated, renamed: "randomFirstName") // You can also point to new class : "UIAlertController.createAlert"
-//   static var randomName: String? {
-//      randomFirstName
-//   }
-//}
 #endif

@@ -3,10 +3,13 @@ import Foundation
 /**
  * - Remark: There is also: SecCreateSharedWebCredentialPassword() as String?
  * - Note: We can use this in other frameworks if we use `@testable import Account`
+ * CodeGen is an internal utility enum for generating random passwords with different configurations.
+ * - Description: CodeGen is a utility enum used for generating random passwords. It provides a method to generate a password of a given length, with options to include lowercase letters, numbers, and special characters.
  */
 public enum CodeGen {
    /**
     * A utility function for generating a random password string of a given length.
+    * - Description: This function creates a secure, random password that can be customized to include a mix of uppercase letters, lowercase letters, numbers, and special characters based on the parameters provided. It is ideal for creating strong passwords for user accounts, encryption keys, or any other security-related authentication mechanisms.
     * - Note: The password string can include uppercase letters, lowercase letters, numbers, and special characters.
     * - Parameters:
     *   - length: The length of the password string to generate.

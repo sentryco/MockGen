@@ -4,11 +4,16 @@ import JSONSugar
 import Logger
 /**
  * Brands
+ * - Description: This enum provides access to a list of brand names and associated functionality.
+ *   It loads brand names from a JSON file and offers methods to retrieve and work with these brands.
  * - Remark: These types have accociated icon graphic
  */
 public enum Brands {
    /**
     * Brands
+    * - Description: This static property holds an array of brand names loaded from a JSON file.
+    *   It provides a centralized list of brands that can be used throughout the application.
+    *   The brands are sorted alphabetically for easy access and consistency.
     * - Remark: These types have associated icon graphic
     * - Remark: We store the brands in an array to avoid loading them repeatedly.
     * - Remark: We cannot use `Config.Bundle.assets` for this purpose.

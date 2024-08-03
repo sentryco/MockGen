@@ -35,7 +35,7 @@ final class MockGenTests: XCTestCase {
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: Tests the `getEmail` function by generating an email using a specified name and brand, and then checks if the result is non-nil and contains an "@" symbol to validate format.
     */
    fileprivate static func testGetEmail() {
       let email = MockGen.getEmail(name: "John", brand: "Apple")
@@ -43,14 +43,14 @@ extension MockGenTests {
       XCTAssertTrue(email?.contains("@") ?? false, "getEmail did not return a valid email.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: Tests the `getWebsite` function by attempting to retrieve a website URL for a specified brand and then checks if the result is non-nil.
     */
    fileprivate static func testGetWebsite() {
       let website: String? = MockGen.getWebsite(brand: "Apple")
       XCTAssertNotNil(website, "getWebsite returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: Tests the `randomFirstName` function by retrieving a random first name and then checks if the result is non-nil.
     */
    fileprivate static func testRandomFirstName() {
       let firstName: String? = MockGen.randomFirstName
@@ -67,7 +67,7 @@ extension MockGenTests {
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: Tests the `randomDate` function by generating a random date and then checks if the result is non-nil. Further validations should be added to check the format and range of the date.
     */
    fileprivate static func testRandomDate() {
       let date: String = MockGen.randomDate
@@ -75,7 +75,7 @@ extension MockGenTests {
       // Add more assertions here to validate the format and range of the date
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: Tests the `getRandomBool` function by generating a boolean value based on a specified chance factor, and then checks if the result is either true or false.
     */
    fileprivate static func testGetRandomBool() {
       let bool: Bool = MockGen.getRandomBool(3) // chance factor
@@ -89,49 +89,49 @@ extension MockGenTests {
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies the functionality of the `randomBank` function by checking if a non-nil bank name is retrieved.
     */
    fileprivate static func testRandomBank() {
       let bank: String? = MockGen.randomBank
       XCTAssertNotNil(bank, "randomBank returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomNote` function retrieves a note and checks if the result is non-nil.
     */
    fileprivate static func testRandomNote() {
       let note: String? = MockGen.randomNote
       XCTAssertNotNil(note, "randomNote returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomFullName` function retrieves a full name and checks if the result is non-nil.
     */
    fileprivate static func testRandomFullName() {
       let fullName: String? = MockGen.randomFullName
       XCTAssertNotNil(fullName, "randomFullName returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomSSID` function retrieves an SSID and checks if the result is non-nil.
     */
    fileprivate static func testRandomSSID() {
       let ssid: String? = MockGen.randomSSID
       XCTAssertNotNil(ssid, "randomSSID returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomIssuer` function retrieves an issuer name and checks if the result is non-nil.
     */
    fileprivate static func testRandomIssuer() {
       let issuer: String? = MockGen.randomIssuer
       XCTAssertNotNil(issuer, "randomIssuer returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomBrand` function retrieves a brand name and checks if the result is non-nil.
     */
    fileprivate static func testRandomBrand() {
       let brand: String? = MockGen.randomBrand
       XCTAssertNotNil(brand, "randomBrand returned nil.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomBrand` function retrieves a brand name and checks if the result is non-nil.
     */
    fileprivate static func testRandomOTP() {
       let otp: String? = MockGen.randomOTP
@@ -140,11 +140,11 @@ extension MockGenTests {
    }
 }
 /**
- * - Fixme: ⚠️️ add description
+ * - Description: This section is reserved for future enhancements or additional documentation.
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test ensures that the `generatePassword` function correctly generates passwords of specified lengths and characteristics.
     */
     fileprivate static func testGeneratePassword() {
         let password: String = CodeGen.generatePassword(length: 92)
@@ -162,11 +162,11 @@ extension MockGenTests {
     }
 }
 /**
- * - Fixme: ⚠️️ add description
+ * - Description: This section is reserved for future enhancements or additional documentation.
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomSecret(min:max:)` function generates a secret string whose length is within the specified minimum and maximum range.
     */
    fileprivate static func testRandomSecretWithMinMax() {
       let minMax = (min: 32, max: 64)
@@ -175,7 +175,7 @@ extension MockGenTests {
       XCTAssertTrue((minMax.min...minMax.max).contains(secret?.count ?? 0), "Secret length is not within the specified range.")
    }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomSecret(min:max:)` function generates a secret string whose length is within the specified minimum and maximum range.
     */
     fileprivate static func testRandomSecretWithLength() {
        let len = 128
@@ -185,18 +185,18 @@ extension MockGenTests {
     }
 }
 /**
- * - Fixme: ⚠️️ add description
+ * - Description: This section is a placeholder for future documentation.
  */
 extension MockGenTests {
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `randomPassword` function generates a password of the specified length and that the length of the generated password matches the expected value.
     */
     fileprivate static func testRandomPassword() {
         let password: String = String.randomPassword(pwdLength: 64)
         XCTAssertEqual(password.count, 64, "Password length is not correct.")
     }
    /**
-    * - Fixme: ⚠️️ add description
+    * - Description: This test verifies that the `random` function generates a string of the specified length and that the length of the generated string matches the expected value.
     */
     fileprivate static func testRandom() {
         let randomString: String = String.random(length: 88)

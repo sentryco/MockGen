@@ -1,9 +1,9 @@
 #if DEBUG
 import Foundation
-
-/*
+/**
  * Notes is a class that represents a CSV file containing notes.
  * It conforms to the CSVKind protocol, which defines methods for working with CSV files.
+ * - Description: This class provides access to a list of notes stored in a CSV file. It is designed to be used for managing and retrieving note entries efficiently for testing or development purposes.
  */
 class Notes: CSVKind {
    /*
