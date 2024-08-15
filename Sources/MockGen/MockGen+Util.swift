@@ -10,16 +10,33 @@ import FileSugar
  */
 extension MockGen {
    /**
-    * Random date generator
+    * Random date generator (between 1970 and Now)
     * - Description: Generates a random date within a specified range of milliseconds. This method is useful for creating date data for testing purposes, ensuring variability in the generated dates.
+    * Explanation:
+    * 1. Calculate Current Time: let now = Date() gets the current date and time.
+    * 2. Start Date: let start = Date(timeIntervalSince1970: 0) sets the start date to January 1, 1970.
+    * 3. Interval Calculation: let interval = now.timeIntervalSince(start) calculates the total number of seconds from 1970 to the current date.
+    * 4. Random Interval: let randomInterval = TimeInterval(arc4random_uniform(UInt32(interval))) generates a random number of seconds within the calculated interval.
+    * 5. Random Date Creation: let randomDate = Date(timeIntervalSince1970: randomInterval) creates a new date object starting from 1970 plus the random interval.
+    * Date Formatting: The date is then formatted to a short style string and returned.
     * ## Examples:
     * let randomDate = MockGen.randomDate // "06/23/2022"
     * - Returns: A random date string in the short date format (MM/dd/yyyy)
     */
    public static var randomDate: String {
-      let msec: Int64 = .init(arc4random_uniform(UInt32(600_000 - 300_000 + 1))) + 300_000 // Generate a random number of milliseconds between 300,000 and 600,000
-      let date: Date = .init(milliseconds: msec) // Create a date object from the random number of milliseconds
-      return date.shortDate // Return the short date string representation of the date object
+      // let msec: Int64 = .init(arc4random_uniform(UInt32(600_000_000_000 - 300_000_000_000 + 1))) + 300_000_000_000 // Generate a random number of milliseconds between 300,000 and 600,000
+      // Swift.print("msec:  \(msec)")
+      // let date: Date = .init(milliseconds: msec) // Create a date object from the random number of milliseconds
+      // Swift.print("date:  \(date)")
+      // return date.shortDate // Return the short date string representation of the date object
+      let now = Date()
+      let start = Date(timeIntervalSince1970: 0) // January 1, 1970
+      let interval = now.timeIntervalSince(start) // Total seconds from 1970 to now
+      let randomInterval = TimeInterval(arc4random_uniform(UInt32(interval))) // Generate a random TimeInterval within the range
+      let randomDate = Date(timeIntervalSince1970: randomInterval) // Create a random Date from 1970
+      Swift.print("randomDate: \(randomDate)")
+      // return DateFormatter.localizedString(from: randomDate, dateStyle: .short, timeStyle: .none) // Format the date to a short style string
+      return randomDate.shortDate // Return the short date string representation of the date object
    }
    /**
     * Random boolean generator
