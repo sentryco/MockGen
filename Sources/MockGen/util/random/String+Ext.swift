@@ -62,8 +62,8 @@ extension String {
     * let randomString = String.random(length: 10) // Generates a random string of length 10. aB48xhKk2Yc
     */
    public static func random(length: Int) -> String {
-      let result: [Character] = (0..<length).compactMap { (_: Int) in 
-         Statics.characters.randomElement() 
+      let result: [Character] = (0..<length).compactMap { (_: Int) in
+         Statics.characters.randomElement()
       } // Generate an array of random characters of the specified length
       return String(result) // Convert the array of characters to a string and return it
    }

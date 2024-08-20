@@ -48,7 +48,7 @@ extension MockGen {
     */
    public static func getRandomBool(_ chance: Int) -> Bool {
       (0...chance) // Create a range from 0 to the specified chance value
-         .filter ({ (_: Int) in Bool.random() }) // Filter the range to include only values where a random boolean value is true
+         .filter({ (_: Int) in Bool.random() }) // Filter the range to include only values where a random boolean value is true
          .isEmpty // Check if the resulting array is empty (i.e. if any values passed the filter)
    }
 }

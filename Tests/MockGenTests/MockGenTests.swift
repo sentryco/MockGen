@@ -56,7 +56,7 @@ extension MockGenTests {
       let firstName: String? = MockGen.randomFirstName
       XCTAssertNotNil(firstName, "randomFirstName returned nil.")
    }
-   
+
    //    fileprivate func testRandomName() {
    //        let name = MockGen.randomName
    //        XCTAssertNotNil(name, "randomName returned nil.")
@@ -150,13 +150,13 @@ extension MockGenTests {
         let password: String = CodeGen.generatePassword(length: 92)
         XCTAssertNotNil(password, "generatePassword returned nil.")
         XCTAssertEqual(password.count, 92, "Password length is not correct.")
-        
+
         let passwordWithoutLowercase: String = CodeGen.generatePassword(length: 44, useLowercase: false)
         XCTAssertFalse(passwordWithoutLowercase.range(of: "[a-z]", options: .regularExpression) != nil, "Password contains lowercase letters.")
-        
+
         let passwordWithoutNumbers: String = CodeGen.generatePassword(length: 32, useNumbers: false)
         XCTAssertFalse(passwordWithoutNumbers.range(of: "[0-9]", options: .regularExpression) != nil, "Password contains numbers.")
-        
+
         let passwordWithoutSpecialChars: String = CodeGen.generatePassword(length: 8, useSpecialChars: false)
         XCTAssertFalse(passwordWithoutSpecialChars.range(of: "[!@#$%^&*]", options: .regularExpression) != nil, "Password contains special characters.")
     }
