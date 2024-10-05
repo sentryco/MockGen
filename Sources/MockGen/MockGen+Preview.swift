@@ -11,7 +11,7 @@ import SwiftUI
       Text("\(MockGen.getWebsite(brand: MockGen.randomBrand ?? "Nothing") ?? "Nothing")")
       Text("\(MockGen.getEmail(name: MockGen.randomFirstName ?? "Nothing", brand: MockGen.randomBrand ?? "Nothing") ?? "Nothing")")
       Text("\(MockGen.randomFirstName ?? "Nothing")")
-      Text("\(MockGen.randomDate ?? "Nothing")")
+      Text("\(MockGen.randomDate/* ?? "Nothing"*/)")
    }
    .frame(width: 300, height: 300)
 }

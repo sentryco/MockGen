@@ -1,7 +1,7 @@
 import Foundation
 import FileSugar
 import JSONSugar
-import Logger
+//import Logger
 /**
  * Brands
  * - Description: This enum provides access to a list of brand names and associated functionality.
@@ -34,16 +34,16 @@ public enum Brands {
     */
    public static let brands: [String] = {
       guard let resourcePath: String = Foundation.Bundle.module.resourcePath else {
-         Logger.error("\(Trace.trace()) - Err getting resourcePath")
+         // Logger.error("\(Trace.trace()) - Err getting resourcePath")
          return []
       } // Get the resource path for the module
       let filePath: String = resourcePath + "/" + "brands.json" // Construct the file path for the brands.json file
       guard let data: Data = FileParser.data(filePath: filePath) else {
-         Logger.error("\(Trace.trace()) - importItems.err \(filePath)")
+         // Logger.error("\(Trace.trace()) - importItems.err \(filePath)")
          return []
       } // Get the data from the file path
       guard let items: [String] = try? data.decode() else {
-         Logger.error("\(Trace.trace()) - Err ⚠️️ parsing json")
+         // Logger.error("\(Trace.trace()) - Err ⚠️️ parsing json")
          return []
       } // Decode the data into an array of strings
       return items.sorted() // Return the array of strings sorted alphabetically

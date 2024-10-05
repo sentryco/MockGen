@@ -1,6 +1,6 @@
 import Foundation
 import FileSugar
-import Logger
+//import Logger
 /**
  * A utility class for working with CSV files.
  * - Description: This class provides methods to read and process CSV files, allowing for operations such as retrieving the entire content of a file or extracting individual lines based on a specified separator.
@@ -28,13 +28,13 @@ class CSVUtil {
     */
    static func content(fileName: String) -> String? {
       guard let resourcePath: String = Foundation.Bundle.module.resourcePath else {
-         Logger.error("\(Trace.trace()) - Err getting resourcePath")
+         // Logger.error("\(Trace.trace()) - Err getting resourcePath")
          return nil
       }
       let filePath: String = resourcePath + "/" + fileName
-      guard FileAsserter.exists(path: filePath) else { Logger.error("\(Trace.trace()) - no file for filename: \(fileName) at path: \(filePath)"); return nil }
+      guard FileAsserter.exists(path: filePath) else { /*Logger.error("\(Trace.trace()) - no file for filename: \(fileName) at path: \(filePath)");*/ return nil }
       guard let content: String = FileParser.content(filePath: filePath, encoding: .macOSRoman) else {
-         Logger.error("\(Trace.trace()) - Err filePath: \(filePath)")
+         // Logger.error("\(Trace.trace()) - Err filePath: \(filePath)")
          return nil
       }
       return content

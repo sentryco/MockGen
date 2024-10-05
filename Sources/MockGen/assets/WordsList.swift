@@ -1,7 +1,7 @@
 import Foundation
 import JSONSugar
 import FileSugar
-import Logger
+//import Logger
 /**
  * JSON -> String-Array
  */
@@ -23,19 +23,19 @@ public final class WordList {
       public static let words: [String] = {
          // Get the resource path for the Xcode project module
          guard let resourcePath: String = Foundation.Bundle.module.resourcePath else {
-            Logger.error("\(Trace.trace()) - Err getting resourcePath")
+            // Logger.error("\(Trace.trace()) - Err getting resourcePath")
             return [] // Return an empty array if the resource path cannot be obtained
          }
          // Construct the file path to the english.txt file
          let filePath: String = resourcePath + "/" + "english.txt"
          // Read the data from the english.txt file
          guard let data: Data = FileParser.data(filePath: filePath) else {
-            Logger.error("\(Trace.trace()) - Err reading data: \(filePath)")
+            // Logger.error("\(Trace.trace()) - Err reading data: \(filePath)")
             return [] // Return an empty array if the data cannot be read
          }
          // Parse the data into an array of strings
          guard let items: [String] = String(data: data, encoding: .utf8)?.components(separatedBy: .newlines) else {
-            Logger.error("\(Trace.trace()) - Err parsing data: \(data)")
+            // Logger.error("\(Trace.trace()) - Err parsing data: \(data)")
             return [] // Return an empty array if the data cannot be parsed
          }
          // Return the array of strings
@@ -45,19 +45,19 @@ public final class WordList {
    public static let words: [String] = {
       // Get the resource path for the Xcode project module
       guard let resourcePath: String = Foundation.Bundle.module.resourcePath else {
-         Logger.error("\(Trace.trace()) - Err getting resourcePath")
+         // Logger.error("\(Trace.trace()) - Err getting resourcePath")
          return [] // Return an empty array if the resource path cannot be obtained
       }
       // Construct the file path to the words.json file
       let filePath: String = resourcePath + "/" + "words.json"
       // Read the data from the words.json file
       guard let data: Data = FileParser.data(filePath: filePath) else {
-         Logger.error("\(Trace.trace()) - Err reading data: \(filePath)")
+         // Logger.error("\(Trace.trace()) - Err reading data: \(filePath)")
          return [] // Return an empty array if the data cannot be read
       }
       // Parse the data into an array of strings
       guard let items: [String] = try? data.decode() else {
-         Logger.error("\(Trace.trace()) - Err ⚠️️ parsing json")
+         // Logger.error("\(Trace.trace()) - Err ⚠️️ parsing json")
          return [] // Return an empty array if the data cannot be parsed
       }
       // Sort the array of strings alphabetically and return it

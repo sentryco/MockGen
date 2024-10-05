@@ -17,15 +17,6 @@
         "branch" : "master",
         "revision" : "eb8b5d19253ccb9e7ebe6cebbf81546c38dd6ed0"
       }
-    },
-    {
-      "identity" : "logger",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sentryco/Logger.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e2e9ed1895b93c17b70f855c757268aead6dd36b"
-      }
     }
   ],
   "version" : 2

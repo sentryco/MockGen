@@ -34,7 +34,7 @@ extension MockGen {
       let interval = now.timeIntervalSince(start) // Total seconds from 1970 to now
       let randomInterval = TimeInterval(arc4random_uniform(UInt32(interval))) // Generate a random TimeInterval within the range
       let randomDate = Date(timeIntervalSince1970: randomInterval) // Create a random Date from 1970
-      Swift.print("randomDate: \(randomDate)")
+      // Swift.print("randomDate: \(randomDate)")
       // return DateFormatter.localizedString(from: randomDate, dateStyle: .short, timeStyle: .none) // Format the date to a short style string
       return randomDate.shortDate // Return the short date string representation of the date object
    }
