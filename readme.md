@@ -22,7 +22,7 @@ To use `MockGen` in your project, add it to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/username/MockGen", branch: "main")
+    .package(url: "https://github.com/sentryco/MockGen", branch: "main")
 ]
 ```
 
