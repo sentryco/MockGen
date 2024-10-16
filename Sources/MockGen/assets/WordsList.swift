@@ -8,8 +8,8 @@ import FileSugar
 public final class WordList {
    /**
     * A utility class for retrieving a list of bitcoin seed words.
-    * The list of words is stored in a text file located in the app's resource path.
-    * The text file is parsed into an array of strings, which is then returned.
+    * - Note: The list of words is stored in a text file located in the app's resource path.
+    * - Note: The text file is parsed into an array of strings, which is then returned.
     * - Note: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt#L608 (The selected URL points to the English word list file for the BIP-0039 standard on the official Bitcoin Improvement Proposals (BIP) repository on GitHub. The file contains a list of 2048 words that are used for generating word-based passwords in the context of Bitcoin wallets and other applications that use the BIP-0039 standard.)
     * - Note: The list of words is based on the BIP-0039 standard and is used for generating word-based passwords.
     * - Remark: The text file is located at `Config.Bundle.assets/english.txt`.

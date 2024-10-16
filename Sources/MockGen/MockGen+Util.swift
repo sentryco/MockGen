@@ -5,13 +5,21 @@ import JSONSugar
 import FileSugar
 /**
  * These methods provide utility functionality for `MockGen`, such as generating random dates and boolean values with different probabilities of being true.
- * - Description: The utility methods in this extension are designed to assist in the creation of mock data by providing random date and boolean value generation. These methods are particularly useful for testing scenarios that require data variability.
- * - Note: These methods are marked as `internal` to ensure they can only be accessed within the same module. They are also wrapped in a `DEBUG` conditional compilation block to ensure they are only included in debug builds.
+ * - Description: The utility methods in this extension are designed to assist
+ *                in the creation of mock data by providing random date and
+ *                boolean value generation. These methods are particularly
+ *                useful for testing scenarios that require data variability.
+ * - Note: These methods are marked as `internal` to ensure they can only be
+ *         accessed within the same module. They are also wrapped in a `DEBUG`
+ *         conditional compilation block to ensure they are only included in
+ *         debug builds.
  */
 extension MockGen {
    /**
     * Random date generator (between 1970 and Now)
-    * - Description: Generates a random date within a specified range of milliseconds. This method is useful for creating date data for testing purposes, ensuring variability in the generated dates.
+    * - Description: Generates a random date within a specified range of
+    *                milliseconds. This method is useful for creating date data for testing
+    *                purposes, ensuring variability in the generated dates.
     * Explanation:
     * 1. Calculate Current Time: let now = Date() gets the current date and time.
     * 2. Start Date: let start = Date(timeIntervalSince1970: 0) sets the start date to January 1, 1970.
@@ -40,8 +48,14 @@ extension MockGen {
    }
    /**
     * Random boolean generator
-    * - Description: This method provides a way to generate a boolean value based on a given chance. The higher the `chance` parameter value, the lower the probability of the method returning `true`. This is useful for simulating conditions with varying likelihoods in testing scenarios.
-    * - Parameter chance: The probability of the boolean value being true, expressed as an integer where 1/chance is the probability (e.g. 3 = 1/16th chance, 4 = 1/32th chance).
+    * - Description: This method provides a way to generate a boolean value
+    *                based on a given chance. The higher the `chance` parameter
+    *                value, the lower the probability of the method returning
+    *                `true`. This is useful for simulating conditions with
+    *                varying likelihoods in testing scenarios.
+    * - Parameter chance: The probability of the boolean value being true,
+    *                     expressed as an integer where 1/chance is the probability
+    *                     (e.g. 3 = 1/16th chance, 4 = 1/32th chance).
     * - Returns: A random boolean value with the specified probability of being true
     * ## Examples:
     * let randomBool = MockGen.getRandomBool(3) // 1/4 chance of returning true

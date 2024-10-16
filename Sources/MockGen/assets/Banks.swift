@@ -3,10 +3,16 @@ import Foundation
 
 /**
  * Banks CSV data
- * - Description: This class represents a collection of banks, providing access to a list of bank information stored in a CSV file.
- *   It is designed to be used for generating mock data or testing scenarios related to banking operations.
- *   The class conforms to the CSVKind protocol, which defines the structure for accessing CSV-based data.
- * - Note: This class provides access to the list of banks stored in a CSV file. The `lines` property contains an array of strings, where each string represents a line in the CSV file. The `fileName` property specifies the name of the CSV file to load.
+ * - Description: This class represents a collection of banks, providing
+ *                access to a list of bank information stored in a CSV file.
+ *                It is designed to be used for generating mock data or testing
+ *                scenarios related to banking operations. The class conforms
+ *                to the CSVKind protocol, which defines the structure for
+ *                accessing CSV-based data.
+ * - Note: This class provides access to the list of banks stored in a CSV
+ *         file. The `lines` property contains an array of strings, where
+ *         each string represents a line in the CSV file. The `fileName`
+ *         property specifies the name of the CSV file to load.
  * - Note: This class is only available in DEBUG builds.
  */
 class Banks: CSVKind {

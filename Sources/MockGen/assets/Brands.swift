@@ -4,8 +4,9 @@ import JSONSugar
 //import Logger
 /**
  * Brands
- * - Description: This enum provides access to a list of brand names and associated functionality.
- *   It loads brand names from a JSON file and offers methods to retrieve and work with these brands.
+ * - Description: This enum provides access to a list of brand names and
+ *                associated functionality. It loads brand names from a JSON
+ *                file and offers methods to retrieve and work with these brands.
  * - Remark: These types have accociated icon graphic
  */
 public enum Brands {

@@ -5,19 +5,27 @@ import JSONSugar
 import FileSugar
 /**
  * This class provides functions for generating random secret strings.
- * - Description: The `SecRan` class provides secure randomization utilities for generating secret strings of variable lengths. These strings can be used for tokens, passwords, or any other cryptographic operations where random strings are required.
+ * - Description: The `SecRan` class provides secure randomization utilities
+ *                for generating secret strings of variable lengths. These
+ *                strings can be used for tokens, passwords, or any other
+ *                cryptographic operations where random strings are required.
  * - Note: We can use this in other frameworks if we use `@testable import Account`
  */
 public class SecRan {
    /**
     * Generates a random secret string of length between `min` and `max` characters
-    * - Description: This method is responsible for creating a secure, random string that can be used as a secret key or password. The length of the generated string will be within the range specified by the `min` and `max` parameters, providing flexibility in the strength and complexity of the secret.
+    * - Description: This method is responsible for creating a secure, random
+    *                string that can be used as a secret key or password. The
+    *                length of the generated string will be within the range
+    *                specified by the `min` and `max` parameters, providing
+    *                flexibility in the strength and complexity of the secret.
     * - Parameters:
     *   - min: The minimum length of the secret string. Default is 8.
     *   - max: The maximum length of the secret string. Default is 44.
-    * - Returns: A random secret string of length between `min` and `max` characters, or nil if `min` is greater than `max`.
-    * Example usage:
-    * let secret = SecRan.randomSecret() // Generates a random secret string between min and max characters in length.
+    * - Returns: A random secret string of length between `min` and `max`
+    *            characters, or nil if `min` is greater than `max`.
+    * - Example usage:
+    *   - let secret = SecRan.randomSecret() // Generates a random secret string between min and max characters in length.
     */
    public static func randomSecret(min: Int = 8, max: Int = 44) -> String? {
       guard min < max else { Swift.print("Error: min \(min) length must be less than or max \(max)"); return nil } // Check if max length is less than or equal to 44
@@ -26,8 +34,14 @@ public class SecRan {
    }
    /**
     * Generates a random secret string of the specified length.
-    * - Abstract: This function generates a random secret string by generating a random 256-bit symmetric key, converting it to a Data object, and then encoding it as a base64-encoded string. The function then limits the string to the desired length.
-    * - Description: This method securely generates a random string of a specified length. It uses cryptographic functions to ensure the randomness and unpredictability of the output, suitable for creating secrets such as tokens or passwords.
+    * - Abstract: This function generates a random secret string by generating
+    *            a random 256-bit symmetric key, converting it to a Data object,
+    *            and then encoding it as a base64-encoded string. The function
+    *            then limits the string to the desired length.
+    * - Description: This method securely generates a random string of a
+    *                specified length. It uses cryptographic functions to
+    *                ensure the randomness and unpredictability of the output,
+    *                suitable for creating secrets such as tokens or passwords.
     * - Fixme: ⚠️️ Make it throw? and add max as an option?
     * - Fixme: ⚠️️ Doc each line, use copilot
     * - Fixme: ⚠️️ figure out a more precise way than multiplying with 8, this is just for testing, so not critical

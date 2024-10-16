@@ -103,9 +103,12 @@ let randomZipCode = MockGen.randomZipCode // Returns a random zip code.
 
 If you find a bug or have a feature request, please open an issue or submit a pull request. Contributions are welcome!
 
-## License
-
-`MockGen` is released under the MIT license. See [LICENSE](LICENSE) for more information.
-
 ## Todo: 
 - Add usage gif
+- Refactoring and Code Cleanup
+- Error Handling in WordList: The WordList class lacks proper error handling and logging. Implementing error propagation and more detailed logging would make the system more robust and easier to debug.
+- Testing and Documentation
+Enhance Unit Tests: The current testing suite could be expanded to cover more scenarios and edge cases, particularly for the password and secret generation methods.
+- Dependency Management: Review and possibly update the dependencies to ensure they are up-to-date and secure. This includes checking the pinned versions in
+- User Documentation
+Enhance README Documentation: The README.md file could be expanded to include more detailed examples, a clearer explanation of the project's capabilities, and a more comprehensive guide for new users and contributors.

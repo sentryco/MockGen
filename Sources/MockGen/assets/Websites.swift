@@ -3,18 +3,25 @@ import FileSugar // Provides a collection of file and directory utilities.
 import JSONSugar // Provides a collection of JSON utilities.
 /**
  * Websites
- * - Description: This enum provides a centralized access point for retrieving website URLs associated with different companies. It supports adding custom brand-specific websites and allows overriding the default behavior to accommodate specific needs.
+ * - Description: This enum provides a centralized access point for retrieving
+ *                website URLs associated with different companies. It supports
+ *                adding custom brand-specific websites and allows overriding
+ *                the default behavior to accommodate specific needs.
  * - Fixme: ⚠️️ Make this a class that can be overriden
  */
 public enum Websites {
    /**
     * A tuple representing a company and its associated website URL
-    * - Description: This tuple holds the company name and its corresponding website URL, facilitating easy access and management of web resources associated with different companies.
+    * - Description: This tuple holds the company name and its corresponding
+    *                website URL, facilitating easy access and management of web
+    *                resources associated with different companies.
     */
    public typealias Website = (company: String, website: String)
    /**
     * Returns the website URL for a given company name.
-    * - Description: This function retrieves the website URL associated with a specified company name by searching through a combined list of default and brand-specific websites.
+    * - Description: This function retrieves the website URL associated with
+    *                a specified company name by searching through a combined list of default
+    *                and brand-specific websites.
     * - Fixme: ⚠️️ This function is not currently overridable to add brand-specific websites. To make it overridable, refactor the function to use a protocol and provide a default implementation in an extension.
     * ## Examples:
     * website(company: "adobe") // Returns "adobe.com"
@@ -32,7 +39,9 @@ public enum Websites {
 extension Websites {
    /**
     * Returns an array of `Website` tuples parsed from a CSV file.
-    * - Description: This method loads and parses a CSV file containing company names and their associated website URLs into an array of `Website` tuples.
+    * - Description: This method loads and parses a CSV file containing
+    *                company names and their associated website URLs into an array of
+    *                `Website` tuples.
     * - Remark: The `.csv` file will not parse as utf8, so we use roman, see https://stackoverflow.com/a/26454159/5389500 for more info.
     * - Remark: The CSV file should have the following format:
     *   - The file is a CSV (comma-separated values) file.
@@ -52,7 +61,10 @@ extension Websites {
    }()
    /**
     * Provides a description of the expected format of the `brandsites.csv` file.
-    * - Description: This section provides details about the `brandsites.csv` file used to store brand-specific website URLs. Each line in the CSV file represents a unique brand and its corresponding website URL, allowing for easy retrieval and management of brand-specific web resources.
+    * - Description: This section provides details about the `brandsites.csv`
+    *                file used to store brand-specific website URLs. Each line in the CSV file
+    *                represents a unique brand and its corresponding website URL, allowing for
+    *                easy retrieval and management of brand-specific web resources.
     * - Remark: The file is a CSV (comma-separated values) file.
     * - Remark: Each line of the file represents a company and its associated website URL.
     * - Remark: The company name and website URL are separated by a comma.
@@ -68,8 +80,10 @@ extension Websites {
    }()
    /**
     * Parses an array of CSV lines into an array of `Website` objects.
-    * Each CSV line should contain a company name and its associated website URL, separated by a comma and a space.
-    * Returns an array of `Website` objects, where each object contains the company name and website URL as properties.
+    * - Note: Each CSV line should contain a company name and its associated
+    *         website URL, separated by a comma and a space.
+    * - Returns: An array of `Website` objects, where each object contains the
+    *            company name and website URL as properties.
     */
    fileprivate static func companyAndWebsites(lines: [String]) -> [Website] {
       // For each line in the CSV file...

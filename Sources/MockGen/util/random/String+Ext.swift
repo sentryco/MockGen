@@ -54,8 +54,17 @@ extension String {
    }
    /**
     * Generates a random string of the specified length.
-    * - Abstract: The function generates a random string by selecting characters from an array that includes lowercase letters, uppercase letters, and numbers.
-    * - Description: This function generates a random string of a specified length. It uses a predefined set of characters that includes lowercase letters, uppercase letters, and numbers. Each character in the string is selected randomly from this set, ensuring a high degree of randomness and complexity in the resulting string. This function is particularly useful for generating test data or creating unique identifiers.
+    * - Abstract: The function generates a random string by selecting
+    *             characters from an array that includes lowercase letters,
+    *             uppercase letters, and numbers.
+    * - Description: This function generates a random string of a specified
+    *                length. It uses a predefined set of characters that
+    *                includes lowercase letters, uppercase letters, and
+    *                numbers. Each character in the string is selected
+    *                randomly from this set, ensuring a high degree of
+    *                randomness and complexity in the resulting string. This
+    *                function is particularly useful for generating test data
+    *                or creating unique identifiers.
     * - Parameter length: The length of the random string.
     * - Returns: A random string of the specified length.
     * Example usage:
