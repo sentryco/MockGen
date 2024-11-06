@@ -2,6 +2,9 @@ import XCTest
 @testable import MockGen
 
 final class MockGenTests: XCTestCase {
+   /**
+    * - Fixme: ⚠️️ group these
+    */
    func testExample() throws {
       // Getters
       Self.testGetEmail()
