@@ -44,7 +44,7 @@ public enum CodeGen {
          letters += specialChars
       }
       let characters: [String.Element] = Array(letters) // Convert the set of characters to an array
-      let numChars: UInt32 = UInt32(characters.count) // Get the number of characters in the array
+      let numChars = UInt32(characters.count) // Get the number of characters in the array
       let result: String = .init((0..<length).map { (_: Int) in // Generate a random password string of the given length using the set of characters
          characters[Int(arc4random_uniform(numChars))]
       })

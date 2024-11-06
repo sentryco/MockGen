@@ -13,7 +13,7 @@ let package = Package(
             targets: ["MockGen"])
     ],
     dependencies: [
-        .package(url: "https://github.com/eonist/JSONSugar.git", branch: "master"),
+        .package(url: "https://github.com/eonist/JSONSugar.git", branch: "master")
         // .package(url: "https://github.com/sentryco/Logger.git", branch: "main")
     ],
     targets: [

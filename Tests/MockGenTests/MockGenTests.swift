@@ -195,14 +195,14 @@ extension MockGenTests {
     * - Description: This test verifies that the `randomPassword` function generates a password of the specified length and that the length of the generated password matches the expected value.
     */
     fileprivate static func testRandomPassword() {
-        let password: String = String.randomPassword(pwdLength: 64)
+        let password = String.randomPassword(pwdLength: 64)
         XCTAssertEqual(password.count, 64, "Password length is not correct.")
     }
    /**
     * - Description: This test verifies that the `random` function generates a string of the specified length and that the length of the generated string matches the expected value.
     */
     fileprivate static func testRandom() {
-        let randomString: String = String.random(length: 88)
+        let randomString = String.random(length: 88)
         XCTAssertEqual(randomString.count, 88, "Random string length is not correct.")
     }
 }
