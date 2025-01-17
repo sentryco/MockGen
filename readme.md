@@ -99,9 +99,9 @@ let randomZipCode = MockGen.randomZipCode // Returns a random zip code.
 - Q: What license is `MockGen` released under?
 - A: `MockGen` is released under the MIT license. See [LICENSE](LICENSE) for more information.
 
-## Contributing
+## Resources
 
-If you find a bug or have a feature request, please open an issue or submit a pull request. Contributions are welcome!
+- Similar package: https://github.com/vadymmarkov/Fakery
 
 ## Todo: 
 - Add usage gif
