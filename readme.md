@@ -1,5 +1,7 @@
 [![Tests](https://github.com/sentryco/MockGen/actions/workflows/tests.yml/badge.svg)](https://github.com/sentryco/MockGen/actions/workflows/tests.yml)
 [![codebeat badge](https://codebeat.co/badges/6f474052-1ae2-4c61-b72f-dcd23e442278)](https://codebeat.co/projects/github-com-sentryco-mockgen-main)
+[![Swift Version](https://img.shields.io/badge/Swift-5.9-orange.svg)](https://swift.org)
+![Platforms](https://img.shields.io/badge/platforms-macOS%20|%20iOS-blue.svg)
 
 # 🧪 MockGen
 
@@ -84,6 +86,49 @@ let randomStreetAddress = MockGen.randomStreetAddress // Returns a random street
 let randomCity = MockGen.randomCity // Returns a random city name.
 let randomState = MockGen.randomState // Returns a random state abbreviation.
 let randomZipCode = MockGen.randomZipCode // Returns a random zip code.
+// e.g., "123 Main St, Springfield, IL 62704"
+let randomAddress = MockGen.randomAddress // Returns a random street address.
+let randomSSID = MockGen.randomSSID // Returns a random Wi-Fi SSID.
+let randomIssuer = MockGen.randomIssuer // Returns a random issuer name.
+let randomBrand = MockGen.randomBrand // Returns a random brand name.
+let randomOTP = MockGen.randomOTP // Returns a random OTP URL.
+```
+
+## Generating Random User Profiles
+
+MockGen can generate comprehensive user profiles combining multiple data points:
+
+```swift
+struct UserProfile {
+    let fullName: String
+    let email: String
+    let phoneNumber: String
+    let address: String
+}
+
+extension MockGen {
+    static var randomUserProfile: UserProfile {
+        let fullName = randomFullName ?? "John Doe"
+        let email = getEmail(name: fullName, brand: randomBrand ?? "example.com") ?? "johndoe@example.com"
+        let phoneNumber = randomPhoneNumber()
+        let address = randomAddress ?? "123 Main St"
+        return UserProfile(fullName: fullName, email: email, phoneNumber: phoneNumber, address: address)
+    }
+}
+
+// Usage
+let userProfile = MockGen.randomUserProfile
+print(userProfile.fullName)      // e.g., "Jane Smith"
+print(userProfile.email)         // e.g., "jane.smith@example.com"
+print(userProfile.phoneNumber)   // e.g., "(555) 123-4567"
+print(userProfile.address)       // e.g., "456 Elm St, Anytown, CA 90210"
+```
+
+The `SecRan` class provides methods for generating secure random secrets. Including usage examples will demonstrate how to generate cryptographically secure secrets.
+
+```swift
+let secret = SecRan.randomSecret(length: 16) // Generates a random secret string of length 16.
+let secretInRange = SecRan.randomSecret(min: 8, max: 32) // Generates a random secret string with length between 8 and 32.
 ```
 
 ## FAQ:

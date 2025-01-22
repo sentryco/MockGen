@@ -63,9 +63,20 @@ extension MockGen {
       }
       return String(first)
    }
-   // fixme: add doc
+   /**
+    * Random Address Generator
+    * - Description: Generates a random street address using the `AddressGenerator` class.
+    * - Returns: A random street address string.
+    */
    public static var randomAddress: String {
       return AddressGenerator.randomAddress()
    }
+   // fixme: add doc
+   // fixme: add unit-test
+   func static func randomDate(from startDate: Date, to endDate: Date) -> Date {
+        let timeInterval = endDate.timeIntervalSince(startDate)
+        let randomInterval = TimeInterval.random(in: 0...timeInterval)
+        return startDate.addingTimeInterval(randomInterval)
+    }
 }
 #endif
