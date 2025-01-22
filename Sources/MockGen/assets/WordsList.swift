@@ -14,7 +14,7 @@ public final class WordList {
     * - Note: The list of words is based on the BIP-0039 standard and is used for generating word-based passwords.
     * - Remark: The text file is located at `Config.Bundle.assets/english.txt`.
     * - Fixme: ⚠️️ Consider storing the list of words in a plist instead of a text file.
-    * - Fixme: ⚠️️ Refactor this class to throw an error if the resource path cannot be obtained or if the data cannot be read or parsed.
+    * - Fixme: ⚠️⚠️️ Refactor this class to throw an error if the resource path cannot be obtained or if the data cannot be read or parsed.
     */
    public final class WordList {
       /**

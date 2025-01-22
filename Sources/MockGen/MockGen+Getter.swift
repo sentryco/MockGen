@@ -63,5 +63,9 @@ extension MockGen {
       }
       return String(first)
    }
+   // fixme: add doc
+   public static var randomAddress: String {
+      return AddressGenerator.randomAddress()
+   }
 }
 #endif
