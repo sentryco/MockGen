@@ -73,7 +73,7 @@ extension MockGen {
    }
    // fixme: add doc
    // fixme: add unit-test
-   func static func randomDate(from startDate: Date, to endDate: Date) -> Date {
+   public static func randomDate(from startDate: Date, to endDate: Date) -> Date {
         let timeInterval = endDate.timeIntervalSince(startDate)
         let randomInterval = TimeInterval.random(in: 0...timeInterval)
         return startDate.addingTimeInterval(randomInterval)
