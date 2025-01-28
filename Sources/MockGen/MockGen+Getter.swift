@@ -71,7 +71,14 @@ extension MockGen {
    public static var randomAddress: String {
       return AddressGenerator.randomAddress()
    }
-   // fixme: add doc
+   /**
+    * Generates a random `Date` between the specified start and end dates.
+    *
+    * - Parameters:
+    *   - startDate: The beginning of the date range.
+    *   - endDate: The end of the date range.
+    * - Returns: A randomly generated `Date` within the specified range.
+    */
    // fixme: add unit-test
    public static func randomDate(from startDate: Date, to endDate: Date) -> Date {
         let timeInterval = endDate.timeIntervalSince(startDate)
