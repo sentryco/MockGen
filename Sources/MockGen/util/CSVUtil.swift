@@ -3,6 +3,7 @@ import FileSugar
 //import Logger
 /**
  * A utility class for working with CSV files.
+ * Abstract: Provides utility methods for reading and processing CSV files, enabling operations such as retrieving file contents and extracting lines with specified separators.
  * - Description: This class provides methods to read and process CSV files,
  *                allowing for operations such as retrieving the entire content
  *                of a file or extracting individual lines based on a specified separator.
@@ -10,6 +11,7 @@ import FileSugar
 class CSVUtil {
    /**
     * Returns an array of strings representing the lines in the specified CSV file
+    * Abstract: Retrieves all lines from a specified CSV file as an array of strings, facilitating CSV data processing.
     * - Description: This method reads the contents of a CSV file and splits
     *                it into an array of strings based on the specified separator.
     *                It is useful for processing CSV files to extract data line by line.
@@ -25,6 +27,7 @@ class CSVUtil {
    }
    /**
     * Returns the contents of the specified CSV file as a string
+    * - Abstract: Reads and returns the entire contents of a CSV file.
     * - Description: This method reads the contents of a specified CSV file
     *                and returns it as a string. It's useful for retrieving the
     *                raw content of a CSV file for further processing or analysis.

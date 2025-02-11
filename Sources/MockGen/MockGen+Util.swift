@@ -5,6 +5,7 @@ import JSONSugar
 import FileSugar
 /**
  * These methods provide utility functionality for `MockGen`, such as generating random dates and boolean values with different probabilities of being true.
+ * - Abstract: Provides utility methods for generating random dates and boolean values for mock data generation.
  * - Description: The utility methods in this extension are designed to assist
  *                in the creation of mock data by providing random date and
  *                boolean value generation. These methods are particularly
@@ -17,6 +18,7 @@ import FileSugar
 extension MockGen {
    /**
     * Random date generator (between 1970 and Now)
+    * - Abstract: Generates a random date string between 1970 and now.
     * - Description: Generates a random date within a specified range of
     *                milliseconds. This method is useful for creating date data for testing
     *                purposes, ensuring variability in the generated dates.
@@ -48,6 +50,7 @@ extension MockGen {
    }
    /**
     * Random boolean generator
+    * - Abstract: Generates a random boolean value based on a specified probability.
     * - Description: This method provides a way to generate a boolean value
     *                based on a given chance. The higher the `chance` parameter
     *                value, the lower the probability of the method returning

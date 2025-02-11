@@ -65,6 +65,7 @@ extension MockGen {
       return getEmail(name: name, brand: brand)
    }
    /**
+    * Random OTP generator
     * - Description: This method generates a random OTP (One-Time Password)
     *                for testing purposes. It uses a predefined format and a
     *                randomly generated secret to create the OTP. The secret is
@@ -96,6 +97,7 @@ extension MockGen {
 }
 /**
  * Random boolean generators
+ * - Abstract: Provides methods to generate random boolean values with varying probabilities for testing scenarios.
  * - Description: This section contains methods that generate random boolean
  *                values with varying probabilities. These methods are useful
  *                for simulating different scenarios in testing, such as the

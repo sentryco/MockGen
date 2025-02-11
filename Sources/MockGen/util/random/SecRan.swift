@@ -5,6 +5,7 @@ import JSONSugar
 import FileSugar
 /**
  * This class provides functions for generating random secret strings.
+ * - Abstract: Provides secure randomization utilities for generating secret strings.
  * - Description: The `SecRan` class provides secure randomization utilities
  *                for generating secret strings of variable lengths. These
  *                strings can be used for tokens, passwords, or any other
@@ -14,6 +15,7 @@ import FileSugar
 public class SecRan {
    /**
     * Generates a random secret string of length between `min` and `max` characters
+    * - Abstract: Generates a random secret string of length between `min` and `max` characters.
     * - Description: This method is responsible for creating a secure, random
     *                string that can be used as a secret key or password. The
     *                length of the generated string will be within the range

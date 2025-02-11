@@ -2,6 +2,7 @@
 import SwiftUI
 /**
  * Preview for mockgen
+ * fixme: remove this? we have unit-tests?
  */
 #Preview {
    VStack {

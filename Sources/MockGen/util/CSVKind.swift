@@ -1,6 +1,7 @@
 import Foundation
 /**
  * A protocol for defining a CSV kind.
+ * - Abstract: Defines a protocol that outlines the necessary properties for a CSV file type, including the file name and its content lines.
  * - Description: The `CSVKind` protocol is used to define the structure and
  *                content of a CSV (Comma-Separated Values) file type within the
  *                application. It specifies the requirements for any type that
@@ -11,6 +12,7 @@ import Foundation
 protocol CSVKind {
    /**
     * The file name for the CSV kind
+    * - Abstract: This is the name of the CSV file.
     * - Description: The `fileName` property uniquely identifies the CSV file
     *                associated with a particular CSV kind. It is used to locate
     *                and differentiate the CSV file when performing file operations
@@ -19,6 +21,7 @@ protocol CSVKind {
    static var fileName: String { get }
    /**
     * An array of lines for the CSV kind
+    * - Abstract: This is the content of the CSV file.
     * - Description: Represents the content of the CSV file as an array of
     *                strings, each string being a line from the CSV file.
     */
@@ -26,6 +29,7 @@ protocol CSVKind {
 }
 /**
  * A helper extension for the CSVKind protocol
+ * Provides shared functionality for all conforming CSVKind types.
  * - Description: This extension provides utility functions that operate on
  *                types conforming to the `CSVKind` protocol.
  * - Remark: The extension provides a function for getting a random line from
@@ -34,6 +38,7 @@ protocol CSVKind {
 extension CSVKind {
    /**
     * Returns a random line from the array of lines for the CSV kind.
+    * Returns a random line from the array of lines.
     * - Description: This method retrieves a random line from the `lines` array,
     *                which represents individual entries or records in the CSV
     *                file. It is useful for testing or when a random sample from

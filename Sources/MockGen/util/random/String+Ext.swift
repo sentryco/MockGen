@@ -1,18 +1,21 @@
 #if DEBUG
 import Foundation
 /**
+ * An extension of `String` that provides utility methods for generating random strings, particularly random passwords with customizable lengths and character sets.
  * - Description: This extension on the `String` class provides utility methods for generating random strings, particularly random passwords with customizable lengths and character sets. It is designed to facilitate the creation of secure, unpredictable passwords for testing and development purposes within the `MockGen` framework.
  * - Note: We can use this in other frameworks if we use `@testable import ...`
  */
 extension String {
    /**
     * A string containing all the characters that can be used to generate a password.
+    * - Abstract: Defines the character set used for generating random passwords, including lowercase and uppercase letters, numbers, and special characters to ensure complexity and security.
     * - Description: This constant defines a set of characters that can be used to generate strong and secure passwords. It includes a mix of lowercase and uppercase letters, numbers, and special characters to ensure complexity and reduce the likelihood of password cracking.
     * - Remark: The string contains lowercase letters, uppercase letters, numbers, and special characters.
     */
    fileprivate static let pwdLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&()0123456789"
    /**
     * Generates a random password string of the specified length
+    * - Abstract: Generates a random password string of the specified length using a predefined character set.
     * - Description: This method generates a random password by selecting characters from a predefined set of alphanumeric and special characters. Each character is chosen randomly from the `pwdLetters` constant, ensuring that the password is unpredictable and secure for use in testing environments.
     * - Remark: The function generates a password string by randomly selecting characters from a set of letters that includes lowercase letters, uppercase letters, numbers, and special characters.
     * - Fixme: ⚠️️ doc each line, use copilot
@@ -32,6 +35,7 @@ extension String {
    }
    /**
     * Used in the random method
+    * - Abstract: Provides static constants for generating random strings.
     * - Description: This nested enum `Statics` serves as a container for static constants used in generating random strings. It provides a centralized location for defining character sets that are used throughout the `String` extension, ensuring consistency and reusability of the code.
     */
    fileprivate enum Statics {

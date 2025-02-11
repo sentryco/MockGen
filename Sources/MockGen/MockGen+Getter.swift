@@ -73,13 +73,16 @@ extension MockGen {
    }
    /**
     * Generates a random `Date` between the specified start and end dates.
-    *
+    * - Description: This method generates a random `Date` within the specified
+    *                date range. It calculates the time interval between `startDate`
+    *                and `endDate`, selects a random interval within that range, and
+    *                adds it to `startDate` to produce the random date.
     * - Parameters:
     *   - startDate: The beginning of the date range.
     *   - endDate: The end of the date range.
     * - Returns: A randomly generated `Date` within the specified range.
     */
-   // fixme: add unit-test
+   // fixme: add unit-test for this?
    public static func randomDate(from startDate: Date, to endDate: Date) -> Date {
         let timeInterval = endDate.timeIntervalSince(startDate)
         let randomInterval = TimeInterval.random(in: 0...timeInterval)

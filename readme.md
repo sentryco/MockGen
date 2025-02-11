@@ -163,7 +163,7 @@ Address Generation: Implement functions to generate random street addresses, inc
 - Payment Information: Add support for generating mock payment data like bank account numbers, IBANs, or Bitcoin wallet addresses.
 - User Profiles: Create composite data structures that represent user profiles, combining names, emails, addresses, and other personal information.
 - Company Data: Generate random company names, business types, and related data.
-
+- It might be needed to store resources in assets.bundle they can simply be stored in resources root. See Quirks project. Confirm with copilot
 - enhance the error handling in your WordList class:
 
 
